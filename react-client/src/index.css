@@ -1,13 +1,279 @@
+/* Import Font Poppins dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Definisikan Pakem Warna dan Font Global (CSS Variables) */
+:root {
+  /* Font Utama */
+  --font-utama: 'Poppins', sans-serif;
+
+  --warna-primer: #667eea;
+  --warna-sekunder: #764ba2;
+
+  /* Warna Teks dan Latar */
+  --warna-teks: #333333;
+  /* Abu-abu tua untuk keterbacaan */
+  --warna-latar: #ffffff;
+  /* Putih */
+
+  /* Warna Lainnya */
+  --warna-shadow: rgba(0, 0, 0, 0.15);
+  /* Bayangan yang konsisten */
+}
+
+/* Terapkan Font dan Warna Dasar ke Body */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-utama);
+  /* Menggunakan variabel font */
+  color: var(--warna-teks);
+  background-color: var(--warna-latar);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Font untuk elemen 'code' tetap monospace */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.btn-gradient{
+  background-color: linear-gradient(135deg, #5a6fd8 0%, #6e4198 100%) !important;
+}
+
+/* --- Navbar Styling --- */
+.custom-navbar {
+  background-color: transparent !important;
+  /* Awalnya transparan */
+  transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
+  /* Transisi halus untuk background dan padding */
+  padding-top: 1rem;
+  /* Sedikit padding untuk transisi */
+  padding-bottom: 1rem;
+  /* Sedikit padding untuk transisi */
+}
+
+/* Kelas yang ditambahkan saat di-scroll */
+.custom-navbar.scrolled-navbar {
+  background-color: #ffffff !important;
+  /* Warna putih solid saat di-scroll */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Tambahkan shadow sedikit */
+  padding-top: 0.5rem;
+  /* Kurangi padding saat discroll */
+  padding-bottom: 0.5rem;
+  /* Kurangi padding saat discroll */
+}
+
+/* Warna brand di navbar */
+.navbar-brand {
+  color: #ffffff !important;
+  /* Warna brand saat navbar transparan */
+  transition: color 0.3s ease-in-out;
+  font-weight: 700;
+}
+
+.custom-navbar.scrolled-navbar .navbar-brand {
+  color: var(--warna-primer) !important;
+  /* Warna brand saat navbar discroll */
+}
+
+/* --- Tombol di Navbar (Tidak Scroll) --- */
+/* Tombol outline-light di navbar (saat tidak discroll) */
+.custom-navbar .btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.7);
+  color: #ffffff;
+  /* Teks putih */
+  background-color: transparent;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.custom-navbar .btn-outline-light:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Tombol light di navbar (saat tidak discroll) - Menggunakan Gradient */
+.custom-navbar .btn-light {
+  background: var(--warna-latar) !important;
+  color: var(--warna-primer) !important;
+  border: none !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.custom-navbar .btn-light:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6e4198 100%) !important;
+  /* Gradient sedikit gelap saat hover */
+  color: #ffffff !important;
+}
+
+/* --- Tombol di Navbar (Saat Scroll) --- */
+/* Tombol outline-light */
+.custom-navbar.scrolled-navbar .btn-outline-light {
+  border-color: var(--warna-primer) !important;
+  /* Border warna primer */
+  color: var(--warna-primer) !important;
+  /* Teks warna primer (PENTING: Tambahkan !important di sini) */
+}
+
+.custom-navbar.scrolled-navbar .btn-outline-light:hover {
+  background-color: var(--warna-primer);
+  /* Background warna primer saat hover */
+  color: #ffffff !important;
+  /* Teks putih saat hover (penting!) */
+  border-color: var(--warna-primer);
+}
+
+.custom-navbar.scrolled-navbar .btn-light {
+  background-color: var(--warna-primer) !important;
+  color: #ffffff !important;
+  border-color: var(--warna-primer) !important;
+}
+
+.custom-navbar.scrolled-navbar .btn-light:hover {
+  background-color: #5a6fd8 !important;
+  border-color: #5a6fd8 !important;
+  color: #ffffff !important;
+}
+
+
+/* --- Hero Section Styling --- */
+.hero-section {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%);
+  color: #ffffff;
+}
+
+.hero-section .btn-outline-light {
+  background-color: transparent;
+}
+
+.hero-section .btn-light {
+  background: var(--warna-latar) !important;
+  /* color: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%) !important; */
+  color: var(--warna-primer) !important;
+  border: none !important;
+  /* font-weight: 500; */
+  transition: all 0.3s ease;
+}
+
+.dashboard-preview {
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px var(--warna-shadow);
+}
+
+.stat-card {
+  border-radius: 0.75rem;
+  /* Lebih rounded */
+}
+
+/* --- How It Works Section Styling --- */
+.how-it-works-section {
+  background-color: var(--warna-latar) !important;
+  color: var(--warna-teks);
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+  line-height: 50px;
+  /* Pusatkan vertikal teks */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Mengatur warna teks untuk paragraf di section ini */
+.how-it-works-section p.text-muted {
+  color: var(--warna-teks) !important;
+  opacity: 0.8;
+}
+
+/* --- Call to Action Section Styling --- */
+.cta-section {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%);
+  color: var(--warna-teks)
+}
+
+/* --- Global Button Styles for Hero & CTA --- */
+/* Tombol light (seperti "Masuk Sekarang", "Daftar Gratis") - Menggunakan Gradient */
+.btn-light {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+  background: linear-gradient(135deg, var(--warna-gelap-primer) 0%, var(--warna-gelap-sekunder) 100%) !important;
+  color: #ffffff !important;
+}
+
+/* Tombol outline-light (seperti "Daftar Baru", "Login") - Transparan, Gradient on Hover */
+.btn-outline-light {
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+/* --- Footer Styling --- */
+footer {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%) !important;
+  color: #ffffff;
+}
+
+footer h6 {
+  color: #ffffff;
+}
+
+footer p.text-muted {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.btn-light {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6e4198 100%) !important;
+  color: #ffffff !important;
+}
+
+.btn-outline-light {
+  border-color: #ffffff !important;
+  background: transparent !important;
+  color: #ffffff !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%) !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+.pageNotFound {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6e4198 100%);
+}
+
+.pageNotFound h1 {
+  font-size: 100px;
 }
