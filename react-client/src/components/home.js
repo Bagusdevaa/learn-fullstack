@@ -2,10 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Button, Card, Badge, Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
-import '../index.css'; 
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import '../index.css';
 
 const Home = () => {
     const [scrolled, setScrolled] = useState(false);
+
+    // Inisialisasi AOS saat komponen dimuat
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true,    
+            mirror: false,
+        });
+        AOS.refresh(); // Refresh AOS jika ada perubahan DOM
+    }, []);
 
     // Efek samping untuk menambahkan dan menghapus event listener
     useEffect(() => {
@@ -67,7 +79,7 @@ const Home = () => {
                     <Row className='align-items-center'>
                         <Col lg={7} md={12} className='mb-4 mb-lg-0'>
                             <div className="hero-content">
-                                <h1 className="display-6 fw-bold mb-4">
+                                <h1 className="display-6 fw-bold mb-4" data-aos="fade-up">
                                     <Typewriter
                                         options={{
                                             strings: [
@@ -82,12 +94,12 @@ const Home = () => {
                                         }}
                                     />
                                 </h1>
-                                <p className="mb-4">
+                                <p className="mb-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                                     Platform digital untuk mengelola absensi karyawan dengan mudah,
                                     cepat, dan akurat. Pantau kehadiran real-time dan kelola data
                                     attendance dalam satu dashboard.
                                 </p>
-                                <div className="hero-buttons d-grid d-lg-flex mb-3 mb-lg-0">
+                                <div className="hero-buttons d-grid d-lg-flex mb-3 mb-lg-0" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
                                     <Link to="/login" className="text-decoration-none">
                                         <Button size="lg" className="btn-light mb-2 mb-lg-0 me-lg-3">
                                             Masuk Sekarang
@@ -101,7 +113,7 @@ const Home = () => {
                                 </div>
                             </div>
                         </Col>
-                        <Col lg={5} md={12} className="text-center">
+                        <Col lg={5} md={12} className="text-center" data-aos="fade-in" data-aos-delay="600" data-aos-duration="1000">
                             <div className="hero-image">
                                 <div className="dashboard-preview bg-white rounded shadow-lg p-4">
                                     <div className="d-flex justify-content-between align-items-center mb-3">
@@ -133,43 +145,55 @@ const Home = () => {
             <section className="how-it-works-section bg-light py-5 mb-5 d-flex align-items-center">
                 <Container>
                     <Row className="text-center mb-5">
-                        <Col>
-                            <h2 className="display-6 fw-bold text-dark">Cara Kerja</h2>
+                        <Col data-aos="fade-up" data-aos-duration="1000">
+                            <h2 className="display-6 fw-bold">Cara Kerja</h2>
                             <p className="lead text-muted">
                                 Tiga langkah mudah untuk memulai
                             </p>
                         </Col>
                     </Row>
                     <Row className="g-4">
-                        <Col lg={4} md={6} className="text-center">
-                            <div className="step-number bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
-                                <span className="fw-bold">1</span>
-                            </div>
-                            <h5>Daftar & Login</h5>
-                            <p className="text-muted">
-                                Buat akun dengan NIP dan data diri,
-                                lalu login ke dashboard personal Anda.
-                            </p>
+                        <Col lg={4} md={6} className="text-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                            <Card>
+                                <Card.Body>
+                                    <div className="step-number text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+                                        <span className="fw-bold">1</span>
+                                    </div>
+                                    <h5>Daftar & Login</h5>
+                                    <p className="text-muted">
+                                        Buat akun dengan NIP dan data diri,
+                                        lalu login ke dashboard personal Anda.
+                                    </p>
+                                </Card.Body>
+                            </Card>
                         </Col>
-                        <Col lg={4} md={6} className="text-center">
-                            <div className="step-number bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
-                                <span className="fw-bold">2</span>
-                            </div>
-                            <h5>Check-in Harian</h5>
-                            <p className="text-muted">
-                                Lakukan absensi check-in saat tiba di kantor
-                                dan check-out saat pulang kerja.
-                            </p>
+                        <Col lg={4} md={6} className="text-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                            <Card>
+                                <Card.Body>
+                                    <div className="step-number text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+                                        <span className="fw-bold">2</span>
+                                    </div>
+                                    <h5>Check-in Harian</h5>
+                                    <p className="text-muted">
+                                        Lakukan absensi check-in saat tiba di kantor
+                                        dan check-out saat pulang kerja.
+                                    </p>
+                                </Card.Body>
+                            </Card>
                         </Col>
-                        <Col lg={4} md={6} className="text-center">
-                            <div className="step-number bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
-                                <span className="fw-bold">3</span>
-                            </div>
-                            <h5>Pantau Progress</h5>
-                            <p className="text-muted">
-                                Lihat riwayat kehadiran dan statistik
-                                absensi Anda dalam dashboard.
-                            </p>
+                        <Col lg={4} md={6} className="text-center" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                            <Card>
+                                <Card.Body>
+                                    <div className="step-number text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+                                        <span className="fw-bold">3</span>
+                                    </div>
+                                    <h5>Pantau Progress</h5>
+                                    <p className="text-muted">
+                                        Lihat riwayat kehadiran dan statistik
+                                        absensi Anda dalam dashboard.
+                                    </p>
+                                </Card.Body>
+                            </Card>
                         </Col>
                     </Row>
                 </Container>
@@ -180,11 +204,11 @@ const Home = () => {
                 <Container>
                     <Row className="text-center">
                         <Col>
-                            <h2 className="display-6 fw-bold mb-3">Siap Memulai?</h2>
-                            <p className="lead mb-4">
+                            <h2 className="display-6 fw-bold mb-3" data-aos="fade-in" data-aos-duration="1000">Siap Memulai?</h2>
+                            <p className="lead mb-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                                 Bergabunglah dengan sistem absensi digital yang mudah dan efisien
                             </p>
-                            <Link to="/register" className="text-decoration-none">
+                            <Link to="/register" className="text-decoration-none" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
                                 <Button size="lg" className="btn-light me-3">
                                     <i className="bi bi-person-plus me-2"></i>
                                     Daftar Gratis
@@ -205,7 +229,7 @@ const Home = () => {
                                 Platform modern untuk mengelola kehadiran karyawan
                             </p>
                         </Col>
-                        <Col md={6} className="text-md-end">
+                        <Col md={6} className="text-md-end mt-4">
                             <p className="text-muted small mb-0">
                                 © 2025 Absensi App. Built with ❤️ using React & Express
                             </p>

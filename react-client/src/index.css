@@ -37,7 +37,7 @@ code {
     monospace;
 }
 
-.btn-gradient{
+.btn-gradient {
   background-color: linear-gradient(135deg, #5a6fd8 0%, #6e4198 100%) !important;
 }
 
@@ -176,7 +176,19 @@ code {
   color: var(--warna-teks);
 }
 
+.how-it-works-section h2 {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%);
+  /* Terapkan gradient ke background */
+  background-clip: text;
+  /* Penting: Potong background agar sesuai dengan bentuk teks */
+  -webkit-text-fill-color: transparent;
+  /* Penting: Jadikan teks transparan agar background terlihat */
+  color: transparent;
+  /* Fallback untuk browser yang tidak mendukung -webkit-text-fill-color */
+}
+
 .step-number {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%);
   width: 50px;
   height: 50px;
   font-size: 1.2rem;
@@ -198,6 +210,13 @@ code {
 .cta-section {
   background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%);
   color: var(--warna-teks)
+}
+
+.cta-section h2 {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 /* --- Global Button Styles for Hero & CTA --- */
