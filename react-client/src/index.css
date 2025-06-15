@@ -296,3 +296,59 @@ footer p.text-muted {
 .pageNotFound h1 {
   font-size: 100px;
 }
+
+.register-page {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6e4198 100%);
+}
+
+.register-page h1 {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.register-page .form-title {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.register-page .login-direct {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 500;
+}
+
+.login-page{
+  background: linear-gradient(135deg, #5a6fd8 0%, #6e4198 100%);
+}
+
+.login-page h1 {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.login-page .login-border{
+  height: 65%;
+}
+
+.login-page .form-title {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.login-page .register-direct {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 500;
+}
