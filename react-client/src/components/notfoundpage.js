@@ -20,7 +20,6 @@ const NotFound = () => {
                     </div>
                 </div>
             </Container>
-
         </div>
     )
 }
