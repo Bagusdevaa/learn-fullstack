@@ -16,18 +16,19 @@ const Register = () => {
     }
     const handlePassword = (inputPassword) => {
         setPassword(inputPassword)
-    }
-    const userRegister = () => {
-        const requestingData = {
-            nip: NIP,
-            nama: nama,
-            password: password
-        }
-        axios({
-            method: 'POST',
-            url: 'http://localhost:3200/users',
-            data: requestingData
-        }).then((result) => {
+    }    
+    const userRegister = async () => {
+        try {
+            const requestingData = {
+                nip: NIP,
+                nama: nama,
+                password: password
+            }
+            const result = await axios({
+                method: 'POST',
+                url: 'http://localhost:3200/users',
+                data: requestingData
+            })
             console.log(result.data)
             if (result.data.registered) {
                 alert("Registration Success")
@@ -35,7 +36,10 @@ const Register = () => {
             } else {
                 alert("Registration Failed")
             }
-        })
+        } catch (error) {
+            console.error('Registration error:', error)
+            alert('Pendaftaran gagal! Silakan coba lagi.')
+        }
     }
 
     return (

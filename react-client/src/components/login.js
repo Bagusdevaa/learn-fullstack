@@ -1,32 +1,47 @@
 import { Container, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import axios from "axios";
 
 const Login = () => {
     const [NIP, setNIP] = useState("")
     const [password, setPassword] = useState("")
 
+    useEffect(() => {
+        const nip = localStorage.getItem('nip');
+        const nama = localStorage.getItem('nama');
+
+        // Jika sudah ada data login, redirect ke dashboard
+        if (nip && nama) {
+            console.log('User already logged in, redirecting...');
+            window.location.replace('/dashboard');
+        }
+    }, [])
+
     const handleNIP = (inputNIP) => {
         setNIP(inputNIP)
     }
     const handlePassword = (inputPassword) => {
         setPassword(inputPassword)
-    }
-    const userLogin = () => {
-        const requestingData = {
-            nip: NIP,
-            password: password
-        }
-        axios({
-            method: 'POST',
-            url: 'http://localhost:3200/users/login',
-            data: requestingData
-        }).then((result) => {
+    }    
+    const userLogin = async () => {
+        try {
+            const requestingData = {
+                nip: NIP,
+                password: password
+            }
+            const result = await axios({
+                method: 'POST',
+                url: 'http://localhost:3200/users/login',
+                data: requestingData
+            })
             localStorage.setItem('nip', result.data.users.nip)
             localStorage.setItem('nama', result.data.users.nama)
             window.location.replace('/dashboard')
-        })
+        } catch (error) {
+            console.error('Login error:', error)
+            alert('Login gagal! Periksa NIP dan password Anda.')
+        }
     }
 
     return (

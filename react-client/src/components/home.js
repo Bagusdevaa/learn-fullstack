@@ -94,19 +94,19 @@ const Home = () => {
                                         }}
                                     />
                                 </h1>
-                                <p className="mb-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                                <p className="hero-description mb-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                                     Platform digital untuk mengelola absensi karyawan dengan mudah,
                                     cepat, dan akurat. Pantau kehadiran real-time dan kelola data
                                     attendance dalam satu dashboard.
                                 </p>
                                 <div className="hero-buttons d-grid d-lg-flex mb-3 mb-lg-0" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
                                     <Link to="/login" className="text-decoration-none">
-                                        <Button size="lg" className="btn-light mb-2 mb-lg-0 me-lg-3">
+                                        <Button size="lg" className="btn-light mb-2 mb-lg-0 me-lg-3 col-12">
                                             Masuk Sekarang
                                         </Button>
                                     </Link>
                                     <Link to="/register" className="text-decoration-none">
-                                        <Button className='btn-outline-light' size="lg">
+                                        <Button className='btn-outline-light col-12 ms-lg-4' size="lg">
                                             Daftar Baru
                                         </Button>
                                     </Link>
