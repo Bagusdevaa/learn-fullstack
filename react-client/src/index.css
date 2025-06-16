@@ -138,7 +138,6 @@ code {
   color: #ffffff !important;
 }
 
-
 /* --- Hero Section Styling --- */
 .hero-section {
   background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%);
@@ -323,7 +322,7 @@ footer p.text-muted {
   font-weight: 500;
 }
 
-.login-page{
+.login-page {
   background: linear-gradient(135deg, #5a6fd8 0%, #6e4198 100%);
 }
 
@@ -334,7 +333,7 @@ footer p.text-muted {
   color: transparent;
 }
 
-.login-page .login-border{
+.login-page .login-border {
   height: 65%;
 }
 
@@ -346,6 +345,76 @@ footer p.text-muted {
 }
 
 .login-page .register-direct {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 500;
+}
+
+.dashboard-page h6, th {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%) !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  font-weight: 700 !important;
+}
+
+.dashboard-page .no-tabel {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.dashboard-page .dashboard-page-name {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.dashboard-page .profile-dashboard {
+  color: var(--warna-sekunder) !important;
+}
+
+.dashboard-page .profile-dashboard:hover {
+  color: var(--warna-primer) !important;
+}
+
+.dashboard-page .btn-outline-light{
+  border-color: var(--warna-sekunder) !important;
+  color: var(--warna-sekunder) !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.dashboard-page .btn-outline-light:hover{
+  border-color: #fff !important;
+  color: #fff !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.edit-page {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6e4198 100%);
+}
+
+.edit-page h1 {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.edit-page .form-title {
+  background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.edit-page .dashboard-direct {
   background: linear-gradient(135deg, var(--warna-primer) 0%, var(--warna-sekunder) 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
